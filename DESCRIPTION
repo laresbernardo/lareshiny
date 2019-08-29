@@ -10,9 +10,12 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     dplyr,
+    miniUI,
     shiny,
     shinyWidgets
 Suggests:
+    h2o,
+    lares,
     shinydashboard
 URL: https://github.com/laresbernardo/lareshiny
 BugReports: https://github.com/laresbernardo/lareshiny/issues

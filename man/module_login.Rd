@@ -17,7 +17,7 @@ module_login(input, session, user = c("123", "321"), pass = c("123",
 \item{logo}{Character. Select image for logo display. Host local
 file in your www directory preferably}
 
-\item{lang}{Character. Language. Currently accepted c("es", "en")}
+\item{lang}{Character. Language. Currently accepted: es, en}
 
 \item{style}{List. Possible values for styling the module such as
 botton_txt_colour and botton_bgd_colour}

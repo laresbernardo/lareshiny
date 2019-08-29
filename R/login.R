@@ -8,7 +8,7 @@
 #' @param user,pass Character Vector. User and password combinations accepted
 #' @param logo Character. Select image for logo display. Host local
 #' file in your www directory preferably
-#' @param lang Character. Language. Currently accepted c("es", "en")
+#' @param lang Character. Language. Currently accepted: es, en
 #' @param style List. Possible values for styling the module such as
 #' botton_txt_colour and botton_bgd_colour
 #' @param logged Boolean. You might want to set to TRUE when developing
@@ -23,9 +23,8 @@
 #   server <- function(input, output, session) {
 #     login <- module_login(input, session, personal = "")
 #     observe({
-#       if (login$authenticated) {
+#       if (login$authenticated)
 #         message("We are in!")
-#       }
 #     })
 #   }
 #   shinyApp(ui, server)
@@ -39,32 +38,32 @@ module_login <- function(input, session,
                                       "botton_bgd_colour" = "#EBB600"),
                          logged = FALSE,
                          personal = "MacBook-Pro-de-Bernardo.local") {
-
+  
   values <- reactiveValues(authenticated = !logged)
-
+  
   # Personal auto-login
   if (Sys.info()[["nodename"]] == personal) logged <- TRUE
-
+  
   # Run Login Module
   if (!logged) {
-
+    
     # Languages
     dic <- data.frame(rbind(
-      c("title","AUTENTICACIÓN","es"),
+      c("title","AUTENTICACION","es"),
       c("title","AUTHENTICATION","en"),
       c("user","Usuario","es"),
       c("user","User","en"),
-      c("pass","Contraseña","es"),
+      c("pass","Contrasena","es"),
       c("pass","Password","en"),
       c("enter","Entrar","es"),
       c("enter","Enter","en"),
-      c("wrong","Usuario/contraseña incorrecta","es"),
+      c("wrong","Usuario/contrasena incorrecta","es"),
       c("wrong","Incorrect user/password","en"),
-      c("wrong_text","Por favor, intenta de nuevo y asegúrate que tus credenciales sean los correctos.","es"),
+      c("wrong_text","Por favor, intenta de nuevo y asegurate que tus credenciales sean los correctos.","es"),
       c("wrong_text","Please, try again with correct user or password.","en")))
     colnames(dic) <- c("term","text","lang")
     dic <- dic[dic$lang == lang,]
-
+    
     # Login Modal
     dataModal <- function(failed = FALSE) {
       button_style <- paste("color:", style$botton_txt_colour,
@@ -75,10 +74,11 @@ module_login <- function(input, session,
                   textInput("username", paste0(dic$text[dic$term == "user"],":"), width = "100%"),
                   passwordInput("password", paste0(dic$text[dic$term == "pass"],":"), width = "100%"),
                   footer = tagList(actionButton("ok", HTML(paste0(
-                    '<span>',dic$text[dic$term == "enter"],'</span> <span class="fa fa-chevron-right"></span>')),
+                    '<span>',dic$text[dic$term == "enter"],
+                    '</span> <span class="fa fa-chevron-right"></span>')),
                     style = button_style)), size = "m")
     }
-
+    
     # Show Modal as Pop-up
     showModal(dataModal())
     loginvalidator <- observeEvent(input$ok,{
@@ -104,7 +104,6 @@ module_login <- function(input, session,
       }
     })
   } else {
-    # When logged parameter is set by default, just enter
     values$authenticated <- TRUE
   }
   return(values)
