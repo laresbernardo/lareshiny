@@ -1,0 +1,19 @@
+Package: lareshiny
+Type: Package
+Title: Lares Shiny Modules
+Version: 0.0.1
+Author: Bernardo Lares
+Maintainer: Bernardo Lares <laresbernardo@gmail.com>
+Description: R library for quick useful Shiny modules such as login module and visualization tools. Use this library to quickly access modules instead of repeating code for every shiny app you develop.
+License: AGPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    dplyr,
+    shiny,
+    shinyWidgets
+Suggests:
+    shinydashboard
+URL: https://github.com/laresbernardo/lareshiny
+BugReports: https://github.com/laresbernardo/lareshiny/issues
+RoxygenNote: 6.1.1
