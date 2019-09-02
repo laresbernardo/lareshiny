@@ -3,7 +3,7 @@
 #' 
 #' @param shiny_project Character. Directory's name
 #' @export
-shiny_path <- function(shiny_project = "Shiny") {
+matrixwd <- function(shiny_project = "Shiny") {
   prod <- paste0("/srv/shiny-server/", shiny_project)
   dev <- paste0("~/shiny-server/", shiny_project)
   if (!dir.exists(prod) & !dir.exists(dev)) {
