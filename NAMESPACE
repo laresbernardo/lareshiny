@@ -2,6 +2,7 @@
 
 export(model_exporter)
 export(module_login)
+export(shiny_path)
 export(try_require)
 import(dplyr)
 import(miniUI)
