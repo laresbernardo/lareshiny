@@ -7,6 +7,7 @@
 #' @docType package
 #' @author Bernardo Lares (laresbernardo@@gmail.com)
 #' @import dplyr
+#' @importFrom lubridate year
 #' @import miniUI
 #' @import shiny
 #' @import shinyWidgets
