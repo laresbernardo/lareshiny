@@ -2,7 +2,7 @@
 % Please edit documentation in R/matrixds.R
 \name{matrixwd}
 \alias{matrixwd}
-\title{Shiny Path for Dev/Production in MatrixDS}
+\title{MatrixDS Auto Working Directory for Shiny}
 \usage{
 matrixwd(shiny_project = "Shiny")
 }
@@ -10,5 +10,8 @@ matrixwd(shiny_project = "Shiny")
 \item{shiny_project}{Character. Directory's name}
 }
 \description{
-Shiny Path for Dev/Production in MatrixDS
+This function automatically detects which of the Shiny paths 
+should be used when running a Shiny App on MatrixDS (internal
+RStudio session or external production version). It also
+works for a local file so the script is the same.
 }

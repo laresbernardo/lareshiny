@@ -1,5 +1,10 @@
 ####################################################################
-#' Shiny Path for Dev/Production in MatrixDS
+#' MatrixDS Auto Working Directory for Shiny
+#' 
+#' This function automatically detects which of the Shiny paths 
+#' should be used when running a Shiny App on MatrixDS (internal
+#' RStudio session or external production version). It also
+#' works for a local file so the script is the same.
 #' 
 #' @param shiny_project Character. Directory's name
 #' @export
