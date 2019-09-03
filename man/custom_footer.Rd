@@ -2,7 +2,7 @@
 % Please edit documentation in R/footer.R
 \name{custom_footer}
 \alias{custom_footer}
-\title{Brand Customize for Shiny's Header}
+\title{Custom Footer: Customize for Shiny's Footer}
 \usage{
 custom_footer(company = "MyCoolCompany",
   site = "https://github.com/laresbernardo/lareshiny",
@@ -16,6 +16,6 @@ custom_footer(company = "MyCoolCompany",
 \item{type}{Integer. Which footer type to use? Needs further developments}
 }
 \description{
-This function personalizes your Shiny dashboard's header with logo, 
-links, favicon, font, and texts.
+This function personalizes your Shiny dashboard's footer with your
+company's name, link, help mail.
 }

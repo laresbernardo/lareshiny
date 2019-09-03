@@ -13,11 +13,11 @@ Imports:
     lubridate,
     miniUI,
     shiny,
+    shinydashboard,
     shinyWidgets
 Suggests:
     h2o,
-    lares,
-    shinydashboard
+    lares
 URL: https://github.com/laresbernardo/lareshiny
 BugReports: https://github.com/laresbernardo/lareshiny/issues
 RoxygenNote: 6.1.1

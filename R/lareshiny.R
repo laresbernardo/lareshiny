@@ -10,6 +10,7 @@
 #' @importFrom lubridate year
 #' @import miniUI
 #' @import shiny
+#' @import shinydashboard
 #' @import shinyWidgets
 "_PACKAGE"
 

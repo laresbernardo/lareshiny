@@ -1,5 +1,5 @@
 ####################################################################
-#' Brand Customize for Shiny's Header
+#' Custom Header: Customize for Shiny's Header
 #' 
 #' This function personalizes your Shiny dashboard's header with logo, 
 #' links, favicon, font, and texts.
@@ -12,16 +12,17 @@
 #' @param height,width Integer. Logo image dimentions
 #' @param text Character. Text displayed in top right corner
 #' @export
-custom_brand <- function(title = "MyLareShiny", 
-                         site = "https://github.com/laresbernardo/lareshiny", 
-                         favicon = NULL, 
-                         font = "Montserrat", 
-                         logosrc = NULL, 
-                         loadingsrc = NULL, 
-                         height = NULL, 
-                         width = NULL,
-                         text = Sys.Date()) {
-  tagList(
+custom_header <- function(title = "MyLareShiny", 
+                          site = "https://github.com/laresbernardo/lareshiny", 
+                          favicon = NULL, 
+                          font = "Montserrat", 
+                          logosrc = NULL, 
+                          loadingsrc = NULL, 
+                          height = NULL, 
+                          width = NULL,
+                          text = Sys.Date()) {
+  
+  aux <- tagList(
     tags$head(
       tags$title(title),
       tags$head(
@@ -59,4 +60,7 @@ custom_brand <- function(title = "MyLareShiny",
     tags$script(HTML('$(document).ready(function() {',
                      '$("header").find("nav").append(\'<div id="pageHeader" class="myClass">', 
                      as.character(text), '</div>\');})')))
+  
+  return(dashboardHeader(title = aux))
+
 }

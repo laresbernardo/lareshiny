@@ -1,8 +1,8 @@
 ####################################################################
-#' Brand Customize for Shiny's Header
+#' Custom Footer: Customize for Shiny's Footer
 #' 
-#' This function personalizes your Shiny dashboard's header with logo, 
-#' links, favicon, font, and texts.
+#' This function personalizes your Shiny dashboard's footer with your
+#' company's name, link, help mail.
 #' 
 #' @param company,site Character. Your company's name and URL
 #' @param helpmail Character. Developers mail
