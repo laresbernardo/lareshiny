@@ -35,8 +35,8 @@ custom_brand <- function(title = "MyLareShiny",
         tags$style(HTML("@import url('https://fonts.googleapis.com/css?",
                         "family = ", font, "');*{font-family: ", font, ";}")),
         # UPPER RIGHT CORNER
-        tags$style(HTML('.myClass { font-size: 16px; line-height: 50px; text-align: right;
-                                padding: 0 15px; overflow: hidden; color: white;}'))),
+        tags$style(HTML('.myClass { font-size: 16px; line-height: 50px; text-align: right;',
+                        'padding: 0 15px; overflow: hidden; color: white;}'))),
       
       # LOADING IMAGE
       tags$script(
@@ -56,7 +56,7 @@ custom_brand <- function(title = "MyLareShiny",
            div(class = 'notbusy', img(src = logosrc, height = "40px", width = width))),
     
     # UPPER RIGHT CORNER TEXT
-    tags$script(HTML('$(document).ready(function() {
-                     $("header").find("nav").append(\'<div id="pageHeader" class="myClass">', 
+    tags$script(HTML('$(document).ready(function() {',
+                     '$("header").find("nav").append(\'<div id="pageHeader" class="myClass">', 
                      as.character(text), '</div>\');})')))
 }
