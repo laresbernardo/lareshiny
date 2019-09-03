@@ -7,7 +7,7 @@
 custom_header(title = "MyLareShiny",
   site = "https://github.com/laresbernardo/lareshiny", favicon = NULL,
   font = "Montserrat", logosrc = NULL, loadingsrc = NULL,
-  height = NULL, width = NULL, text = Sys.Date())
+  height = NULL, width = NULL, text = Sys.Date(), type = 1)
 }
 \arguments{
 \item{title}{Character. Your Shinys title (displayed in Navigators' tab)}
@@ -23,6 +23,9 @@ custom_header(title = "MyLareShiny",
 \item{height, width}{Integer. Logo image dimentions}
 
 \item{text}{Character. Text displayed in top right corner}
+
+\item{type}{Integer. 1 for complete dashboardHeader results, 
+2 for title results}
 }
 \description{
 This function personalizes your Shiny dashboard's header with logo, 

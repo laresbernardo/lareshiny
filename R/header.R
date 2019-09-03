@@ -11,6 +11,8 @@
 #' @param logosrc,loadingsrc Character. Logo image and loading image
 #' @param height,width Integer. Logo image dimentions
 #' @param text Character. Text displayed in top right corner
+#' @param type Integer. 1 for complete dashboardHeader results, 
+#' 2 for title results
 #' @export
 custom_header <- function(title = "MyLareShiny", 
                           site = "https://github.com/laresbernardo/lareshiny", 
@@ -20,7 +22,8 @@ custom_header <- function(title = "MyLareShiny",
                           loadingsrc = NULL, 
                           height = NULL, 
                           width = NULL,
-                          text = Sys.Date()) {
+                          text = Sys.Date(),
+                          type = 1) {
   
   aux <- tagList(
     tags$head(
@@ -61,6 +64,8 @@ custom_header <- function(title = "MyLareShiny",
                      '$("header").find("nav").append(\'<div id="pageHeader" class="myClass">', 
                      as.character(text), '</div>\');})')))
   
-  return(dashboardHeader(title = aux))
-
+  if (type == 1)
+    return(dashboardHeader(title = aux))
+  if (type == 2)
+    return(aux)
 }
