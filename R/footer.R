@@ -14,13 +14,13 @@ custom_footer <- function(company = "MyCoolCompany",
                           type = 2) {
   if (type == 1)
     tags$footer(
-      HTML(paste("ShinyDashboard _", lubridate::year(Sys.Date()),
+      HTML(paste("ShinyDashboard &#169;", lubridate::year(Sys.Date()),
                  a(company, href = site, target = "_blank"), "|", 
                  a("Contact", href = paste0("mailto:", helpmail)))),
       align = "center")
   if (type == 2)
     tags$footer(
-      HTML(paste("ShinyDashboard _", lubridate::year(Sys.Date()),
+      HTML(paste("ShinyDashboard &#169;", lubridate::year(Sys.Date()),
                  a(company, href = site, target = "_blank"), "|", 
                  a("Contacto", href = paste0("mailto:", helpmail)))),
       align = "center")
