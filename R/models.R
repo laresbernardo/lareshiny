@@ -44,13 +44,14 @@ model_exporter <- function(model) {
     
     observeEvent(input$run, {
       withProgress(message = "Generating files...", value = 1, {
-        export_results(model, 
-                       txt = 1L %in% input$checkGroup,
-                       rds = 2L %in% input$checkGroup,
-                       binary = 3L %in% input$checkGroup,
-                       mojo = 4L %in% input$checkGroup,
-                       csv = 5L %in% input$checkGroup,
-                       plots = 6L %in% input$checkGroup)  
+        which <- c("txt", "csv", "rds", "binary", "mojo", "plots")
+        aux <- c(txt = 1L %in% input$checkGroup,
+                 csv = 5L %in% input$checkGroup,
+                 rds = 2L %in% input$checkGroup,
+                 binary = 3L %in% input$checkGroup,
+                 mojo = 4L %in% input$checkGroup,
+                 plots = 6L %in% input$checkGroup)
+        export_results(model, which[aux])
       })
       sendSweetAlert(session, title = "Done!", type = "success",
                      text = paste("Succesfully exported results for", 
