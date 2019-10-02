@@ -7,6 +7,8 @@
 #' @docType package
 #' @author Bernardo Lares (laresbernardo@@gmail.com)
 #' @import dplyr
+#' @importFrom DT tableFooter tableHeader
+#' @import htmltools
 #' @importFrom lubridate year
 #' @import miniUI
 #' @import shiny

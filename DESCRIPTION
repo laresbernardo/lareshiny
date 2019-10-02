@@ -10,6 +10,8 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     dplyr,
+    DT,
+    htmltools,
     lubridate,
     miniUI,
     shiny,
