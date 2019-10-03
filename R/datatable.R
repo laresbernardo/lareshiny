@@ -55,8 +55,9 @@ js_op <- function(column, operation, txt = "", signif = 3) {
 }
 
 # library(DT)
+# library(lareshiny)
 # dat <- iris[1:4]
-#
+# 
 # javascript <- JS(
 #   js_op_aux("start"),
 #   js_op(0, operation = "count", txt = "Contador: "),
@@ -65,6 +66,6 @@ js_op <- function(column, operation, txt = "", signif = 3) {
 #   js_op(3, operation = "custom", txt = "ALGO"),
 #   js_op_aux("end"))
 # 
-# datatable(dat, rownames = FALSE, 
+# datatable(dat, rownames = FALSE,
 #           container = js_op_aux("sketch", dat),
 #           options = list(footerCallback = javascript))

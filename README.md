@@ -1,2 +1,2 @@
 # lareshiny
-Shiny Modules
+Shiny modules and functions to make my life easier!
