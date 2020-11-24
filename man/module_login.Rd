@@ -4,10 +4,17 @@
 \alias{module_login}
 \title{Login Module for Shiny}
 \usage{
-module_login(input, session, user = c("123", "321"), pass = c("123",
-  "321"), logo = NA, lang = "es", style = list(botton_txt_colour =
-  "#FFFFFF", botton_bgd_colour = "#EBB600"), logged = FALSE,
-  personal = "MacBook-Pro-de-Bernardo.local")
+module_login(
+  input,
+  session,
+  user = c("123", "321"),
+  pass = c("123", "321"),
+  logo = NA,
+  lang = "es",
+  style = list(botton_txt_colour = "#FFFFFF", botton_bgd_colour = "#EBB600"),
+  logged = FALSE,
+  personal = "MacBook-Pro-de-Bernardo.local"
+)
 }
 \arguments{
 \item{input, session}{Internal}

@@ -13,6 +13,23 @@
 #' @param text Character. Text displayed in top right corner
 #' @param type Integer. 1 for complete dashboardHeader results, 
 #' 2 for title results
+#' @examples
+#' if (interactive()) {
+#'   header <- custom_header(
+#'     title = "MyLareShiny", 
+#'     site = "https://github.com/laresbernardo/lareshiny", 
+#'     font = "Montserrat", 
+#'     logosrc = "https://github.com/laresbernardo/lares/raw/master/man/figures/lares_logo.png", 
+#'     text = Sys.Date())
+#'   shinyApp(
+#'     ui = dashboardPage(
+#'       header,
+#'       dashboardSidebar(),
+#'       dashboardBody()
+#'     ),
+#'     server = function(input, output) { }
+#'   )
+#' }
 #' @export
 custom_header <- function(title = "MyLareShiny", 
                           site = "https://github.com/laresbernardo/lareshiny", 

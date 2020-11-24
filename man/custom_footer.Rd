@@ -4,9 +4,12 @@
 \alias{custom_footer}
 \title{Custom Footer: Customize for Shiny's Footer}
 \usage{
-custom_footer(company = "MyCoolCompany",
+custom_footer(
+  company = "MyCoolCompany",
   site = "https://github.com/laresbernardo/lareshiny",
-  helpmail = "myemail@mydomain.com", type = 2)
+  helpmail = "myemail@mydomain.com",
+  type = 2
+)
 }
 \arguments{
 \item{company, site}{Character. Your company's name and URL}

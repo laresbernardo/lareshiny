@@ -4,10 +4,18 @@
 \alias{custom_header}
 \title{Custom Header: Customize for Shiny's Header}
 \usage{
-custom_header(title = "MyLareShiny",
-  site = "https://github.com/laresbernardo/lareshiny", favicon = NULL,
-  font = "Montserrat", logosrc = NULL, loadingsrc = NULL,
-  height = NULL, width = NULL, text = Sys.Date(), type = 1)
+custom_header(
+  title = "MyLareShiny",
+  site = "https://github.com/laresbernardo/lareshiny",
+  favicon = NULL,
+  font = "Montserrat",
+  logosrc = NULL,
+  loadingsrc = NULL,
+  height = NULL,
+  width = NULL,
+  text = Sys.Date(),
+  type = 1
+)
 }
 \arguments{
 \item{title}{Character. Your Shinys title (displayed in Navigators' tab)}
@@ -30,4 +38,22 @@ custom_header(title = "MyLareShiny",
 \description{
 This function personalizes your Shiny dashboard's header with logo, 
 links, favicon, font, and texts.
+}
+\examples{
+if (interactive()) {
+  header <- custom_header(
+    title = "MyLareShiny", 
+    site = "https://github.com/laresbernardo/lareshiny", 
+    font = "Montserrat", 
+    logosrc = "https://github.com/laresbernardo/lares/raw/master/man/figures/lares_logo.png", 
+    text = Sys.Date())
+  shinyApp(
+    ui = dashboardPage(
+      header,
+      dashboardSidebar(),
+      dashboardBody()
+    ),
+    server = function(input, output) { }
+  )
+}
 }
