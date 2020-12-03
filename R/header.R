@@ -6,12 +6,14 @@
 #' 
 #' @param title Character. Your Shinys title (displayed in Navigators' tab)
 #' @param site Character. URL for your site (opens when logo is clicked)
-#' @param favicon Character. Image for your favicon. Save file in www directory
+#' @param favicon Character. Image for your favicon. Save file in www directory.
 #' @param font Character. Font for whole Shiny app. Use Google Fonts names
-#' @param logosrc,loadingsrc Character. Logo image and loading image
-#' @param height,width Integer. Logo image dimentions
+#' @param logosrc,loadingsrc Character. Logo image and loading image. For
+#' local files, save them in \code{www} directory and call them directly.
+#' @param logo_height,logo_width,load_height,load_width Integer. 
+#' Logo and loading images dimensions.
 #' @param text Character. Text displayed in top right corner
-#' @param type Integer. 1 for complete dashboardHeader results, 
+#' @param type Integer. 1 for complete \code{dashboardHeader} results, 
 #' 2 for title results
 #' @examples
 #' if (interactive()) {
@@ -32,13 +34,15 @@
 #' }
 #' @export
 custom_header <- function(title = "MyLareShiny", 
-                          site = "https://github.com/laresbernardo/lareshiny", 
+                          site = NULL,
                           favicon = NULL, 
                           font = "Montserrat", 
                           logosrc = NULL, 
-                          loadingsrc = NULL, 
-                          height = NULL, 
-                          width = NULL,
+                          logo_height = "40px", 
+                          logo_width = NULL,
+                          loadingsrc = NULL,
+                          load_height = "40px", 
+                          load_width = NULL,
                           text = Sys.Date(),
                           type = 1) {
   
@@ -71,10 +75,14 @@ custom_header <- function(title = "MyLareShiny",
         }},100)")),
     
     # LOGO AND LOADING IMAGES
-    # Loading image created with http://www.ajaxload.info/ 
+    # Loading image created with http://www.ajaxload.info/ or inst/docs/loader.gif
     tags$a(href = site,
-           div(class = "busy", img(src = loadingsrc, height = height, width = width)),
-           div(class = 'notbusy', img(src = logosrc, height = "40px", width = width))),
+           div(class = "busy", img(
+             src = ifelse(length(loadingsrc) > 0, loadingsrc, logosrc), 
+             height = if (length(loadingsrc) > 0) load_height else logo_height, 
+             width = if (length(loadingsrc) > 0) load_width else logo_width)),
+           div(class = 'notbusy', img(
+             src = logosrc, height = logo_height, width = logo_width))),
     
     # UPPER RIGHT CORNER TEXT
     tags$script(HTML('$(document).ready(function() {',
