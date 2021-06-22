@@ -34,7 +34,10 @@ or testing your app so this module doesn't show up every time.
 Check the personal parameter as well}
 
 \item{personal}{Character. If you wish to auto-login when you are
-in your personal instance or computer, set your Sys.info's nodename}
+in your personal instance or computer, set your Sys.info's nodename.}
+}
+\value{
+A reactiveValues object
 }
 \description{
 Login Module for Shiny with local User and Password. This must be

@@ -9,6 +9,9 @@ model_exporter(model)
 \arguments{
 \item{model}{List. Result from h2o_automl()}
 }
+\value{
+A shiny interactive app
+}
 \description{
 Friendly app that helps you export lares' h2o_automl() results
 }

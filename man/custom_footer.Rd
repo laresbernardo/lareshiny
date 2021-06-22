@@ -16,7 +16,10 @@ custom_footer(
 
 \item{helpmail}{Character. Developers mail}
 
-\item{type}{Integer. Which footer type to use? Needs further developments}
+\item{type}{Integer. Which footer type to use? Needs further developments.}
+}
+\value{
+A tags$footer formatted object
 }
 \description{
 This function personalizes your Shiny dashboard's footer with your

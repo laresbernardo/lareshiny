@@ -6,7 +6,8 @@
 #' 
 #' @param company,site Character. Your company's name and URL
 #' @param helpmail Character. Developers mail
-#' @param type Integer. Which footer type to use? Needs further developments
+#' @param type Integer. Which footer type to use? Needs further developments.
+#' @returns A tags$footer formatted object
 #' @export
 custom_footer <- function(company = "MyCoolCompany", 
                           site = "https://github.com/laresbernardo/lareshiny", 

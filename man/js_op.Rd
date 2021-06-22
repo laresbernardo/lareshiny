@@ -15,6 +15,9 @@ js_op(column, operation, txt = "", signif = 3)
 
 \item{signif}{Integer. How many decimals to consider when operating}
 }
+\value{
+Text that can be parsed as javascript.
+}
 \description{
 Totals Row for datatables
 }

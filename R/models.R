@@ -4,11 +4,12 @@
 #' Friendly app that helps you export lares' h2o_automl() results
 #' 
 #' @param model List. Result from h2o_automl()
-#' @export
+#' @returns A shiny interactive app
 #' @examples
 #' if (interactive()) {
 #'   model_exporter(model)
 #' }
+#' @export
 model_exporter <- function(model) {
   
   try_require("lares")

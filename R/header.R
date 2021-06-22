@@ -14,7 +14,8 @@
 #' Logo and loading images dimensions.
 #' @param text Character. Text displayed in top right corner
 #' @param type Integer. 1 for complete \code{dashboardHeader} results, 
-#' 2 for title results
+#' 2 for title results.
+#' @returns A dashboardHeader object
 #' @examples
 #' if (interactive()) {
 #'   header <- custom_header(

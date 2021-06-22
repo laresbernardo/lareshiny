@@ -15,7 +15,8 @@
 #' or testing your app so this module doesn't show up every time.
 #' Check the personal parameter as well
 #' @param personal Character. If you wish to auto-login when you are
-#' in your personal instance or computer, set your Sys.info's nodename
+#' in your personal instance or computer, set your Sys.info's nodename.
+#' @returns A reactiveValues object
 #' @export
 # library(shiny)
 # if (interactive()) {

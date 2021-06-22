@@ -7,9 +7,12 @@
 js_op_aux(type, df = NULL)
 }
 \arguments{
-\item{type}{Character. Select start, end or sketch}
+\item{type}{Character. Select start, end or sketch.}
 
-\item{df}{data.frame. Needed for sketch only}
+\item{df}{data.frame. Needed for sketch only.}
+}
+\value{
+Text that can be parsed as javascript.
 }
 \description{
 Helper for javascript code

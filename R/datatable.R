@@ -1,8 +1,9 @@
 ####################################################################
 #' Helper for javascript code
 #' 
-#' @param type Character. Select start, end or sketch
-#' @param df data.frame. Needed for sketch only
+#' @param type Character. Select start, end or sketch.
+#' @param df data.frame. Needed for sketch only.
+#' @returns Text that can be parsed as javascript.
 #' @export
 js_op_aux <- function(type, df = NULL) {
   if (type == "start")
@@ -26,6 +27,7 @@ js_op_aux <- function(type, df = NULL) {
 #' @param operation Character. Select from sum, mean, count, custom
 #' @param txt Character. Insert text before (or instead) operation
 #' @param signif Integer. How many decimals to consider when operating
+#' @returns Text that can be parsed as javascript.
 #' @export
 js_op <- function(column, operation, txt = "", signif = 3) {
   

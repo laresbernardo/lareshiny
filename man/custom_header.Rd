@@ -37,7 +37,10 @@ Logo and loading images dimensions.}
 \item{text}{Character. Text displayed in top right corner}
 
 \item{type}{Integer. 1 for complete \code{dashboardHeader} results, 
-2 for title results}
+2 for title results.}
+}
+\value{
+A dashboardHeader object
 }
 \description{
 This function personalizes your Shiny dashboard's header with logo, 
