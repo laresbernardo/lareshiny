@@ -6,13 +6,15 @@
 \usage{
 custom_header(
   title = "MyLareShiny",
-  site = "https://github.com/laresbernardo/lareshiny",
+  site = NULL,
   favicon = NULL,
   font = "Montserrat",
   logosrc = NULL,
+  logo_height = "40px",
+  logo_width = NULL,
   loadingsrc = NULL,
-  height = NULL,
-  width = NULL,
+  load_height = "40px",
+  load_width = NULL,
   text = Sys.Date(),
   type = 1
 )
@@ -22,17 +24,19 @@ custom_header(
 
 \item{site}{Character. URL for your site (opens when logo is clicked)}
 
-\item{favicon}{Character. Image for your favicon. Save file in www directory}
+\item{favicon}{Character. Image for your favicon. Save file in www directory.}
 
 \item{font}{Character. Font for whole Shiny app. Use Google Fonts names}
 
-\item{logosrc, loadingsrc}{Character. Logo image and loading image}
+\item{logosrc, loadingsrc}{Character. Logo image and loading image. For
+local files, save them in \code{www} directory and call them directly.}
 
-\item{height, width}{Integer. Logo image dimentions}
+\item{logo_height, logo_width, load_height, load_width}{Integer. 
+Logo and loading images dimensions.}
 
 \item{text}{Character. Text displayed in top right corner}
 
-\item{type}{Integer. 1 for complete dashboardHeader results, 
+\item{type}{Integer. 1 for complete \code{dashboardHeader} results, 
 2 for title results}
 }
 \description{
