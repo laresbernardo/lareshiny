@@ -22,4 +22,4 @@ Suggests:
     lares
 URL: https://github.com/laresbernardo/lareshiny
 BugReports: https://github.com/laresbernardo/lareshiny/issues
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3

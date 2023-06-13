@@ -6,13 +6,15 @@
 \usage{
 custom_footer(
   company = "MyCoolCompany",
+  text = "ShinyDashboard",
   site = "https://github.com/laresbernardo/lareshiny",
   helpmail = "myemail@mydomain.com",
   type = 2
 )
 }
 \arguments{
-\item{company, site}{Character. Your company's name and URL}
+\item{company, text, site}{Character. Your company's name and URL and
+the project's name to show in footer.}
 
 \item{helpmail}{Character. Developers mail}
 
