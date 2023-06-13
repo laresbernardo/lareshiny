@@ -2,7 +2,7 @@
 % Please edit documentation in R/header.R
 \name{custom_header}
 \alias{custom_header}
-\title{Custom Header: Customize for Shiny's Header}
+\title{Custom Header: Customized for Shiny's Header}
 \usage{
 custom_header(
   title = "MyLareShiny",

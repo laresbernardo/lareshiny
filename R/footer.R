@@ -1,5 +1,5 @@
 ####################################################################
-#' Custom Footer: Customize for Shiny's Footer
+#' Custom Footer: Customizes for Shiny's Footer
 #' 
 #' This function personalizes your Shiny dashboard's footer with your
 #' company's name, link, help mail.
@@ -20,11 +20,11 @@ custom_footer <- function(company = "MyCoolCompany",
       HTML(paste(text, "&#169;", lubridate::year(Sys.Date()),
                  a(company, href = site, target = "_blank"), "|", 
                  a("Contact", href = paste0("mailto:", helpmail)))),
-      align = "center")
+      align = "center", class = "footer")
   if (type == 2)
     tags$footer(
       HTML(paste(text, "&#169;", lubridate::year(Sys.Date()),
                  a(company, href = site, target = "_blank"), "|", 
                  a("Contacto", href = paste0("mailto:", helpmail)))),
-      align = "center")
+      align = "center", class = "footer")
 }

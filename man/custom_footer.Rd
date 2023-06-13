@@ -2,7 +2,7 @@
 % Please edit documentation in R/footer.R
 \name{custom_footer}
 \alias{custom_footer}
-\title{Custom Footer: Customize for Shiny's Footer}
+\title{Custom Footer: Customizes for Shiny's Footer}
 \usage{
 custom_footer(
   company = "MyCoolCompany",

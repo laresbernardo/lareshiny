@@ -1,5 +1,5 @@
 ####################################################################
-#' Custom Header: Customize for Shiny's Header
+#' Custom Header: Customized for Shiny's Header
 #' 
 #' This function personalizes your Shiny dashboard's header with logo, 
 #' links, favicon, font, and texts.
@@ -49,6 +49,7 @@ custom_header <- function(title = "MyLareShiny",
   
   aux <- tagList(
     tags$head(
+      class = "header",
       tags$title(title),
       tags$head(
         # SHINY'S TITLE
