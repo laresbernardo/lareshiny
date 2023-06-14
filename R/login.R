@@ -108,6 +108,6 @@ module_login <- function(input, session,
     values$authenticated <- TRUE
   }
   values$user <- user
-  values$timestamps <- Sys.time()
+  values$timestamp <- Sys.time()
   return(values)
 }
