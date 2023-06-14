@@ -5,7 +5,7 @@
 #' added in the server section (no need to add UI)
 #'
 #' @param input,session Internal
-#' @param user,pass Character Vector. User and password combinations accepted
+#' @param users,pwds Character Vector. User and password combinations accepted
 #' @param logo Character. Select image for logo display. Host local
 #' file in your www directory preferably
 #' @param lang Character. Language. Currently accepted: es, en
@@ -15,7 +15,7 @@
 #' or testing your app so this module doesn't show up every time.
 #' Check the personal parameter as well
 #' @param personal Character. If you wish to auto-login when you are
-#' in your personal instance or computer, set your Sys.info's nodename.
+#' in your personal instance or computer, set your Sys.info()[["nodename"]].
 #' @returns A reactiveValues object
 #' @export
 # library(shiny)
@@ -31,16 +31,17 @@
 #   shinyApp(ui, server)
 # }
 module_login <- function(input, session,
-                         user = c("123","321"),
-                         pass = c("123","321"),
+                         users = c("123","321"),
+                         pwds = c("123","321"),
                          logo = NA,
                          lang = "es",
                          style = list("botton_txt_colour" = "#FFFFFF",
                                       "botton_bgd_colour" = "#EBB600"),
                          logged = FALSE,
-                         personal = "MacBook-Pro-de-Bernardo.local") {
+                         personal = "MacBookBLB.local") {
   
   values <- reactiveValues(authenticated = logged)
+  nodename <- Sys.info()[["nodename"]]
   
   # Personal auto-login
   if (Sys.info()[["nodename"]] == personal) logged <- TRUE
@@ -83,14 +84,14 @@ module_login <- function(input, session,
     # Show Modal as Pop-up
     showModal(dataModal())
     loginvalidator <- observeEvent(input$ok,{
-      if (length(user) > 1) {
-        pass <- pass[user == input$username]
-        user <- input$username
+      if (length(users) > 1) {
+        pwds <- pwds[users == input$username]
+        users <- input$username
       }
-      user <- which(user == input$username)
-      pass <- which(pass == input$password)
-      if (length(user) > 0 & length(pass) > 0) {
-        if (user == pass) {
+      users <- which(users == input$username)
+      pwds <- which(pwds == input$password)
+      if (length(users) > 0 & length(pwds) > 0) {
+        if (users == pwds) {
           values$authenticated <- TRUE
           loginvalidator$suspend()
           removeModal()
@@ -103,11 +104,12 @@ module_login <- function(input, session,
           type = "error",
           text = dic$text[dic$term == "wrong_text"])
       }
+      values$user <- input$username
     })
   } else {
     values$authenticated <- TRUE
   }
-  values$user <- user
   values$timestamp <- Sys.time()
+  values$nodename <- nodename
   return(values)
 }

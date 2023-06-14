@@ -7,8 +7,8 @@
 module_login(
   input,
   session,
-  user = c("123", "321"),
-  pass = c("123", "321"),
+  users = c("123", "321"),
+  pwds = c("123", "321"),
   logo = NA,
   lang = "es",
   style = list(botton_txt_colour = "#FFFFFF", botton_bgd_colour = "#EBB600"),
@@ -19,7 +19,7 @@ module_login(
 \arguments{
 \item{input, session}{Internal}
 
-\item{user, pass}{Character Vector. User and password combinations accepted}
+\item{users, pwds}{Character Vector. User and password combinations accepted}
 
 \item{logo}{Character. Select image for logo display. Host local
 file in your www directory preferably}
