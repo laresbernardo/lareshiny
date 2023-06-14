@@ -40,7 +40,7 @@ module_login <- function(input, session,
                          logged = FALSE,
                          personal = "MacBook-Pro-de-Bernardo.local") {
   
-  values <- reactiveValues(authenticated = !logged)
+  values <- reactiveValues(authenticated = logged)
   
   # Personal auto-login
   if (Sys.info()[["nodename"]] == personal) logged <- TRUE
@@ -107,5 +107,7 @@ module_login <- function(input, session,
   } else {
     values$authenticated <- TRUE
   }
+  values$user <- user
+  values$timestamps <- Sys.time()
   return(values)
 }
