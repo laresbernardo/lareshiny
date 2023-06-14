@@ -44,7 +44,10 @@ module_login <- function(input, session,
   nodename <- Sys.info()[["nodename"]]
   
   # Personal auto-login
-  if (Sys.info()[["nodename"]] == personal) logged <- TRUE
+  if (Sys.info()[["nodename"]] == personal){
+    logged <- TRUE
+    values$user <- personal
+  }
   
   # Run Login Module
   if (!logged) {
