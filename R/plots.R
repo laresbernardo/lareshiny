@@ -15,7 +15,7 @@
 autoline_shiny <- function(session, text, plot_name, font_size = 14, n = 1.6) {
   x <- session$clientData[[sprintf("output_%s_width", plot_name)]]
   max_title_len <- n * x / font_size
-  words <- strsplit(txt, " ")[[1]]
+  words <- strsplit(text, " ")[[1]]
   lines <- character()
   curr_line <- ""
   for (word in words) {
@@ -29,6 +29,6 @@ autoline_shiny <- function(session, text, plot_name, font_size = 14, n = 1.6) {
     }
   }
   lines <- c(lines, curr_line)
-  txt <- paste(lines, collapse = "\n")
-  return(txt)
+  text <- paste(lines, collapse = "\n")
+  return(text)
 }
