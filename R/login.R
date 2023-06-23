@@ -4,18 +4,19 @@
 #' Login Module for Shiny with local User and Password. This must be
 #' added in the server section (no need to add UI)
 #'
-#' @param input,session Internal
+#' @param input,session Shiny's input and session objects.
 #' @param users,pwds Character Vector. User and password combinations accepted
 #' @param logo Character. Select image for logo display. Host local
 #' file in your www directory preferably
+#' @param logo_height Character. Height for rendering the logo.
 #' @param lang Character. Language. Currently accepted: es, en
 #' @param style List. Possible values for styling the module such as
 #' botton_txt_colour and botton_bgd_colour
 #' @param logged Boolean. You might want to set to TRUE when developing
 #' or testing your app so this module doesn't show up every time.
 #' Check the personal parameter as well
-#' @param personal Character. If you wish to auto-login when you are
-#' in your personal instance or computer, set your Sys.info()[["nodename"]].
+#' @param personal Character vector. If you wish to auto-login certain
+#' user(s), set the values from \code{Sys.info()[["nodename"]]}.
 #' @returns A reactiveValues object
 #' @export
 # library(shiny)
@@ -34,9 +35,11 @@ module_login <- function(input, session,
                          users = c("123","321"),
                          pwds = c("123","321"),
                          logo = NA,
+                         logo_height = "100px",
                          lang = "es",
-                         style = list("botton_txt_colour" = "#FFFFFF",
-                                      "botton_bgd_colour" = "#EBB600"),
+                         style = list(
+                           "botton_txt_colour" = "#FFFFFF",
+                           "botton_bgd_colour" = "#EBB600"),
                          logged = FALSE,
                          personal = "MacBookBLB.local") {
   
@@ -44,9 +47,9 @@ module_login <- function(input, session,
   nodename <- Sys.info()[["nodename"]]
   
   # Personal auto-login
-  if (Sys.info()[["nodename"]] == personal){
+  if (Sys.info()[["nodename"]] %in% personal){
     logged <- TRUE
-    values$user <- personal
+    values$user <- personal[1]
   }
   
   # Run Login Module
@@ -74,7 +77,7 @@ module_login <- function(input, session,
       button_style <- paste("color:", style$botton_txt_colour,
                             "; background-color:", style$botton_bgd_colour,
                             "; border-radius: 6px;")
-      modalDialog(if (!is.na(logo)) img(src = logo, height = "100px", align = "center"),
+      modalDialog(if (!is.na(logo)) img(src = logo, height = logo_height, align = "center"),
                   title = dic$text[dic$term == "title"],
                   textInput("username", paste0(dic$text[dic$term == "user"],":"), width = "100%"),
                   passwordInput("password", paste0(dic$text[dic$term == "pass"],":"), width = "100%"),

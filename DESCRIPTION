@@ -1,7 +1,7 @@
 Package: lareshiny
 Type: Package
 Title: Lares Shiny Modules
-Version: 0.0.2
+Version: 0.0.3
 Author: Bernardo Lares
 Maintainer: Bernardo Lares <laresbernardo@gmail.com>
 Description: Quick useful Shiny modules such as login module and visualization tools. Use this library to quickly access modules instead of repeating code for every shiny app you develop.

@@ -10,19 +10,22 @@ module_login(
   users = c("123", "321"),
   pwds = c("123", "321"),
   logo = NA,
+  logo_height = "100px",
   lang = "es",
   style = list(botton_txt_colour = "#FFFFFF", botton_bgd_colour = "#EBB600"),
   logged = FALSE,
-  personal = "MacBook-Pro-de-Bernardo.local"
+  personal = "MacBookBLB.local"
 )
 }
 \arguments{
-\item{input, session}{Internal}
+\item{input, session}{Shiny's input and session objects.}
 
 \item{users, pwds}{Character Vector. User and password combinations accepted}
 
 \item{logo}{Character. Select image for logo display. Host local
 file in your www directory preferably}
+
+\item{logo_height}{Character. Height for rendering the logo.}
 
 \item{lang}{Character. Language. Currently accepted: es, en}
 
@@ -33,8 +36,8 @@ botton_txt_colour and botton_bgd_colour}
 or testing your app so this module doesn't show up every time.
 Check the personal parameter as well}
 
-\item{personal}{Character. If you wish to auto-login when you are
-in your personal instance or computer, set your Sys.info's nodename.}
+\item{personal}{Character vector. If you wish to auto-login certain
+user(s), set the values from \code{Sys.info()[["nodename"]]}.}
 }
 \value{
 A reactiveValues object
