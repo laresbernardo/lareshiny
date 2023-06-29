@@ -13,6 +13,7 @@ module_login(
   logo_height = "100px",
   lang = "es",
   style = list(botton_txt_colour = "#FFFFFF", botton_bgd_colour = "#EBB600"),
+  change_text = list(),
   logged = FALSE,
   personal = "MacBookBLB.local"
 )
@@ -30,7 +31,9 @@ file in your www directory preferably}
 \item{lang}{Character. Language. Currently accepted: es, en}
 
 \item{style}{List. Possible values for styling the module such as
-botton_txt_colour and botton_bgd_colour}
+\code{botton_txt_colour} and \code{botton_bgd_colour}.}
+
+\item{change_text}{Named list. Change the default texts used.}
 
 \item{logged}{Boolean. You might want to set to TRUE when developing
 or testing your app so this module doesn't show up every time.

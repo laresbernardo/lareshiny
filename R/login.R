@@ -11,7 +11,8 @@
 #' @param logo_height Character. Height for rendering the logo.
 #' @param lang Character. Language. Currently accepted: es, en
 #' @param style List. Possible values for styling the module such as
-#' botton_txt_colour and botton_bgd_colour
+#' \code{botton_txt_colour} and \code{botton_bgd_colour}.
+#' @param change_text Named list. Change the default texts used.
 #' @param logged Boolean. You might want to set to TRUE when developing
 #' or testing your app so this module doesn't show up every time.
 #' Check the personal parameter as well
@@ -40,6 +41,7 @@ module_login <- function(input, session,
                          style = list(
                            "botton_txt_colour" = "#FFFFFF",
                            "botton_bgd_colour" = "#EBB600"),
+                         change_text = list(),
                          logged = FALSE,
                          personal = "MacBookBLB.local") {
   
@@ -57,20 +59,28 @@ module_login <- function(input, session,
     
     # Languages
     dic <- data.frame(rbind(
-      c("title","AUTENTICACION","es"),
+      c("title","AUTENTICACIÓN","es"),
       c("title","AUTHENTICATION","en"),
       c("user","Usuario","es"),
       c("user","User","en"),
-      c("pass","Contrasena","es"),
+      c("pass","Contraseña","es"),
       c("pass","Password","en"),
       c("enter","Entrar","es"),
       c("enter","Enter","en"),
-      c("wrong","Usuario/contrasena incorrecta","es"),
+      c("wrong","Usuario/contraseña incorrecta","es"),
       c("wrong","Incorrect user/password","en"),
       c("wrong_text","Por favor, intenta de nuevo y asegurate que tus credenciales sean los correctos.","es"),
       c("wrong_text","Please, try again with correct user or password.","en")))
     colnames(dic) <- c("term","text","lang")
-    dic <- dic[dic$lang == lang,]
+    dic <- dic[dic$lang == lang, ]
+    
+    # Rename values with custom texts
+    if (length(change_text) > 0) {
+      lares::check_opts(names(change_text), dic$term)
+      for (term in names(change_text)) {
+        dic$text[dic$term == term] <- change_text[[term]]
+      }
+    }
     
     # Login Modal
     dataModal <- function(failed = FALSE) {
