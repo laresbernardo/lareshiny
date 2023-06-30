@@ -12,7 +12,7 @@
 #' @export
 model_exporter <- function(model) {
   
-  try_require("lares")
+  try_require2("lares")
   
   ui <- miniPage(
     gadgetTitleBar(model$model_name, left = NULL),
