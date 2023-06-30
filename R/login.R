@@ -56,18 +56,18 @@ module_login <- function(input, session,
   
   # Run Login Module
   if (!logged) {
-    
+    # stringi::stri_escape_unicode("XXX")
     # Languages
     dic <- data.frame(rbind(
-      c("title","AUTENTICACIÓN","es"),
+      c("title", ("AUTENTICACI\u00d3N"),"es"),
       c("title","AUTHENTICATION","en"),
       c("user","Usuario","es"),
       c("user","User","en"),
-      c("pass","Contraseña","es"),
+      c("pass","Contrase\u00f1a","es"),
       c("pass","Password","en"),
       c("enter","Entrar","es"),
       c("enter","Enter","en"),
-      c("wrong","Usuario/contraseña incorrecta","es"),
+      c("wrong","Usuario/contrase\u00f1a incorrecta","es"),
       c("wrong","Incorrect user/password","en"),
       c("wrong_text","Por favor, intenta de nuevo y asegurate que tus credenciales sean los correctos.","es"),
       c("wrong_text","Please, try again with correct user or password.","en")))
