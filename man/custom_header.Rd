@@ -20,27 +20,28 @@ custom_header(
 )
 }
 \arguments{
-\item{title}{Character. Your Shinys title (displayed in Navigators' tab)}
+\item{title}{Character. Your 'shiny' app title (displayed in Navigators' tab)}
 
 \item{site}{Character. URL for your site (opens when logo is clicked)}
 
-\item{favicon}{Character. Image for your favicon. Save file in www directory.}
+\item{favicon}{Character. Image for your favicon.
+Save file in \code{www} directory.}
 
-\item{font}{Character. Font for whole Shiny app. Use Google Fonts names}
+\item{font}{Character. Font for whole 'shiny' app. Use Google Fonts names.}
 
 \item{logosrc, loadingsrc}{Character. Logo image and loading image. For
-local files, save them in \code{www} directory and call them directly.}
+local files, save them in \code{www} directory to call them directly.}
 
 \item{logo_height, logo_width, load_height, load_width}{Integer. 
 Logo and loading images dimensions.}
 
-\item{text}{Character. Text displayed in top right corner}
+\item{text}{Character. Text displayed in top right corner.}
 
 \item{type}{Integer. 1 for complete \code{dashboardHeader} results, 
 2 for title results.}
 }
 \value{
-A dashboardHeader object
+A dashboardHeader object.
 }
 \description{
 This function personalizes your Shiny dashboard's header with logo, 
@@ -49,18 +50,18 @@ links, favicon, font, and texts.
 \examples{
 if (interactive()) {
   header <- custom_header(
-    title = "MyLareShiny", 
-    site = "https://github.com/laresbernardo/lareshiny", 
-    font = "Montserrat", 
-    logosrc = "https://github.com/laresbernardo/lares/raw/master/man/figures/lares_logo.png", 
+    title = "MyLareShiny",
+    site = "https://github.com/laresbernardo/lareshiny",
+    font = "Montserrat",
+    logosrc = "logo.png",
     text = Sys.Date())
   shinyApp(
     ui = dashboardPage(
       header,
-      dashboardSidebar(),
+      dashboardSidebar(disable = TRUE),
       dashboardBody()
     ),
-    server = function(input, output) { }
+    server = function(input, output) {}
   )
 }
 }

@@ -49,3 +49,15 @@ A reactiveValues object
 Login Module for Shiny with local User and Password. This must be
 added in the server section (no need to add UI)
 }
+\examples{
+if (interactive()) {
+  ui <- fluidPage("Hello lareshiny!")
+  server <- function(input, output, session) {
+    login <- module_login(input, session, personal = "")
+    observe({
+      if (login$authenticated) message("We are in!")
+    })
+  }
+  shinyApp(ui, server)
+}
+}

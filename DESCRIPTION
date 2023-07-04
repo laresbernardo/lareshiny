@@ -1,10 +1,10 @@
 Package: lareshiny
 Type: Package
-Title: Lares Shiny Modules
+Title: Lares 'shiny' modules
 Version: 0.0.3
-Author: Bernardo Lares
+Authors@R: person("Bernardo", "Lares", , "laresbernardo@gmail.com", c("cre","aut"))
 Maintainer: Bernardo Lares <laresbernardo@gmail.com>
-Description: Quick useful Shiny modules such as login module and visualization tools. Use this library to quickly access modules instead of repeating code for every shiny app you develop.
+Description: Useful 'shiny' production-ready modules and helpers such as login window and visualization tools.
 License: AGPL-3
 Encoding: UTF-8
 LazyData: true

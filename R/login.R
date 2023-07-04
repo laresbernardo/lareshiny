@@ -19,19 +19,18 @@
 #' @param personal Character vector. If you wish to auto-login certain
 #' user(s), set the values from \code{Sys.info()[["nodename"]]}.
 #' @returns A reactiveValues object
+#' @examples
+#' if (interactive()) {
+#'   ui <- fluidPage("Hello lareshiny!")
+#'   server <- function(input, output, session) {
+#'     login <- module_login(input, session, personal = "")
+#'     observe({
+#'       if (login$authenticated) message("We are in!")
+#'     })
+#'   }
+#'   shinyApp(ui, server)
+#' }
 #' @export
-# library(shiny)
-# if (interactive()) {
-#   ui <- fluidPage("Hello world!")
-#   server <- function(input, output, session) {
-#     login <- module_login(input, session, personal = "")
-#     observe({
-#       if (login$authenticated)
-#         message("We are in!")
-#     })
-#   }
-#   shinyApp(ui, server)
-# }
 module_login <- function(input, session,
                          users = c("123","321"),
                          pwds = c("123","321"),
