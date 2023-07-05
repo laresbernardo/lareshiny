@@ -32,36 +32,36 @@ Save file in \code{www} directory.}
 \item{logosrc, loadingsrc}{Character. Logo image and loading image. For
 local files, save them in \code{www} directory to call them directly.}
 
-\item{logo_height, logo_width, load_height, load_width}{Integer. 
+\item{logo_height, logo_width, load_height, load_width}{Integer.
 Logo and loading images dimensions.}
 
 \item{text}{Character. Text displayed in top right corner.}
 
-\item{type}{Integer. 1 for complete \code{dashboardHeader} results, 
+\item{type}{Integer. 1 for complete \code{dashboardHeader} results,
 2 for title results.}
 }
 \value{
 A dashboardHeader object.
 }
 \description{
-This function personalizes your Shiny dashboard's header with logo, 
+This function personalizes your Shiny dashboard's header with logo,
 links, favicon, font, and texts.
 }
 \examples{
 if (interactive()) {
-  header <- custom_header(
-    title = "MyLareShiny",
-    site = "https://github.com/laresbernardo/lareshiny",
-    font = "Montserrat",
-    logosrc = "logo.png",
-    text = Sys.Date())
   shinyApp(
     ui = dashboardPage(
-      header,
+      custom_header(
+        title = "MyLareShiny",
+        site = "https://github.com/laresbernardo/lareshiny",
+        font = "Montserrat",
+        logosrc = "logo.png",
+        text = Sys.Date()
+      ),
       dashboardSidebar(disable = TRUE),
       dashboardBody()
     ),
-    server = function(input, output) {}
+    server = function(input, output) { }
   )
 }
 }

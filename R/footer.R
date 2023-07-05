@@ -1,30 +1,29 @@
 ####################################################################
 #' Custom Footer: Customizes for Shiny's Footer
-#' 
+#'
 #' This function personalizes your Shiny dashboard's footer with your
 #' company's name, link, help mail.
-#' 
+#'
 #' @param company,text,site Character. Your company's name and URL and
 #' the project's name to show in footer.
 #' @param helpmail Character. Developers mail
-#' @param type Integer. Which footer type to use? Needs further developments.
+#' @param lang Character. Language for the text.
 #' @returns A tags$footer formatted object
 #' @export
-custom_footer <- function(company = "MyCoolCompany", 
+custom_footer <- function(company = "MyCoolCompany",
                           text = "ShinyDashboard",
-                          site = "https://github.com/laresbernardo/lareshiny", 
-                          helpmail = "myemail@mydomain.com", 
-                          type = 2) {
-  if (type == 1)
-    tags$footer(
-      HTML(paste(text, "&#169;", lubridate::year(Sys.Date()),
-                 a(company, href = site, target = "_blank"), "|", 
-                 a("Contact", href = paste0("mailto:", helpmail)))),
-      align = "center", class = "footer")
-  if (type == 2)
-    tags$footer(
-      HTML(paste(text, "&#169;", lubridate::year(Sys.Date()),
-                 a(company, href = site, target = "_blank"), "|", 
-                 a("Contacto", href = paste0("mailto:", helpmail)))),
-      align = "center", class = "footer")
+                          site = "https://github.com/laresbernardo/lareshiny",
+                          helpmail = "myemail@mydomain.com",
+                          lang = "en") {
+  contact <- "@"
+  if ("en" %in% lang) contact <- "Contact"
+  if ("es" %in% lang) contact <- "Contacto"
+  tags$footer(
+    HTML(paste(
+      text, "&#169;", format(Sys.Date(), format = "%Y"),
+      a(company, href = site, target = "_blank"), "|",
+      a(contact, href = paste0("mailto:", helpmail))
+    )),
+    align = "center", class = "footer"
+  )
 }

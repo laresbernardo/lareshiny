@@ -9,7 +9,7 @@ custom_footer(
   text = "ShinyDashboard",
   site = "https://github.com/laresbernardo/lareshiny",
   helpmail = "myemail@mydomain.com",
-  type = 2
+  lang = "en"
 )
 }
 \arguments{
@@ -18,7 +18,7 @@ the project's name to show in footer.}
 
 \item{helpmail}{Character. Developers mail}
 
-\item{type}{Integer. Which footer type to use? Needs further developments.}
+\item{lang}{Character. Language for the text.}
 }
 \value{
 A tags$footer formatted object

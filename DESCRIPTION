@@ -1,6 +1,6 @@
 Package: lareshiny
 Type: Package
-Title: Lares 'shiny' modules
+Title: Lares 'shiny' Modules
 Version: 0.0.3
 Authors@R: person("Bernardo", "Lares", , "laresbernardo@gmail.com", c("cre","aut"))
 Maintainer: Bernardo Lares <laresbernardo@gmail.com>
@@ -12,7 +12,6 @@ Imports:
     dplyr,
     DT,
     htmltools,
-    lubridate,
     miniUI,
     shiny,
     shinydashboard,

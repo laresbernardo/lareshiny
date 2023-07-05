@@ -1,10 +1,10 @@
 ####################################################################
 #' Automatically wrap ggplot2 texts depending on rendered size
-#' 
+#'
 #' This function automatically adapts the length of a title or subtitle
 #' text so that it wraps long texts in separate lines. This is useful
 #' to avoid trimming long texts when the rendered shiny size is shorter.
-#' 
+#'
 #' @param session Shiny's session object.
 #' @param text Character. Text for the title or subtitle or any text
 #' to be wrapped.
