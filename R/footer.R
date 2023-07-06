@@ -8,7 +8,7 @@
 #' the project's name to show in footer.
 #' @param helpmail Character. Developers mail
 #' @param lang Character. Language for the text.
-#' @returns A tags$footer formatted object
+#' @returns HTML string (tags$footer).
 #' @export
 custom_footer <- function(company = "MyCoolCompany",
                           text = "ShinyDashboard",

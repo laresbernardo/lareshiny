@@ -21,7 +21,7 @@ the project's name to show in footer.}
 \item{lang}{Character. Language for the text.}
 }
 \value{
-A tags$footer formatted object
+HTML string (tags$footer).
 }
 \description{
 This function personalizes your Shiny dashboard's footer with your
