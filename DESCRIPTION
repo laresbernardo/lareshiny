@@ -19,6 +19,6 @@ Imports:
 Suggests:
     h2o,
     lares
-URL: https://github.com/laresbernardo/lareshiny
+URL: https://github.com/laresbernardo/lareshiny, https://laresbernardo.github.io/lareshiny/
 BugReports: https://github.com/laresbernardo/lareshiny/issues
 RoxygenNote: 7.2.3
