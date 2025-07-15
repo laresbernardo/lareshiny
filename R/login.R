@@ -1,4 +1,3 @@
-####################################################################
 #' Login Module for Shiny
 #'
 #' Login Module for Shiny with local User and Password. This must be
@@ -76,9 +75,10 @@ module_login <- function(input, session,
 
     # Rename values with custom texts
     if (length(change_text) > 0) {
-      lares::check_opts(names(change_text), dic$term)
       for (term in names(change_text)) {
-        dic$text[dic$term == term] <- change_text[[term]]
+        if (term %in% dic$term) {
+          dic$text[dic$term == term] <- change_text[[term]]
+        }
       }
     }
 
@@ -89,16 +89,30 @@ module_login <- function(input, session,
         "; background-color:", style$botton_bgd_colour,
         "; border-radius: 6px;"
       )
-      modalDialog(if (!is.na(logo)) img(src = logo, height = logo_height, align = "center"),
+      modalDialog(
+        if (!is.na(logo)) img(src = logo, height = logo_height, align = "center"),
         title = dic$text[dic$term == "title"],
         textInput("username", paste0(dic$text[dic$term == "user"], ":"), width = "100%"),
         passwordInput("password", paste0(dic$text[dic$term == "pass"], ":"), width = "100%"),
-        footer = tagList(actionButton("ok", HTML(paste0(
-          "<span>", dic$text[dic$term == "enter"],
-          '</span> <span class="fa fa-chevron-right"></span>'
-        )),
-        style = button_style
-        )), size = "m"
+        footer = tagList(
+          actionButton("ok", HTML(paste0(
+            "<span>", dic$text[dic$term == "enter"],
+            '</span> <span class="fa fa-chevron-right"></span>'
+          )),
+          style = button_style
+          ),
+          # Add JavaScript to handle Enter key
+          tags$script(HTML("
+            $(document).on('keypress', function(e) {
+              if(e.which == 13) {
+                if($('#password').is(':focus')) {
+                  $('#ok').click();
+                }
+              }
+            });
+          "))
+        ),
+        size = "m"
       )
     }
 
