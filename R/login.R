@@ -24,7 +24,8 @@
 #'   server <- function(input, output, session) {
 #'     login <- module_login(input, session, personal = "")
 #'     observe({
-#'       if (login$authenticated) message("We are in!")
+#'       if (login$authenticated)
+#'         message("User logged in successfully: ", login$user)
 #'     })
 #'   }
 #'   shinyApp(ui, server)

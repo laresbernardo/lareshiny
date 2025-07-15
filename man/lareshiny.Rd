@@ -2,8 +2,8 @@
 % Please edit documentation in R/lareshiny.R
 \docType{package}
 \name{lareshiny}
-\alias{lareshiny}
 \alias{lareshiny-package}
+\alias{lareshiny}
 \title{Lares Shiny Modules}
 \description{
 R library for quick useful Shiny modules
@@ -12,6 +12,7 @@ R library for quick useful Shiny modules
 Useful links:
 \itemize{
   \item \url{https://github.com/laresbernardo/lareshiny}
+  \item \url{https://laresbernardo.github.io/lareshiny/}
   \item Report bugs at \url{https://github.com/laresbernardo/lareshiny/issues}
 }
 
