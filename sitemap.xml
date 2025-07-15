@@ -1,39 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://laresbernardo.github.io/lareshiny/404.html</loc>
-  </url>
-  <url>
-    <loc>https://laresbernardo.github.io/lareshiny/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://laresbernardo.github.io/lareshiny/index.html</loc>
-  </url>
-  <url>
-    <loc>https://laresbernardo.github.io/lareshiny/reference/autoline_shiny.html</loc>
-  </url>
-  <url>
-    <loc>https://laresbernardo.github.io/lareshiny/reference/custom_footer.html</loc>
-  </url>
-  <url>
-    <loc>https://laresbernardo.github.io/lareshiny/reference/custom_header.html</loc>
-  </url>
-  <url>
-    <loc>https://laresbernardo.github.io/lareshiny/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://laresbernardo.github.io/lareshiny/reference/js_op.html</loc>
-  </url>
-  <url>
-    <loc>https://laresbernardo.github.io/lareshiny/reference/js_op_aux.html</loc>
-  </url>
-  <url>
-    <loc>https://laresbernardo.github.io/lareshiny/reference/lareshiny.html</loc>
-  </url>
-  <url>
-    <loc>https://laresbernardo.github.io/lareshiny/reference/model_exporter.html</loc>
-  </url>
-  <url>
-    <loc>https://laresbernardo.github.io/lareshiny/reference/module_login.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://laresbernardo.github.io/lareshiny/404.html</loc></url>
+<url><loc>https://laresbernardo.github.io/lareshiny/authors.html</loc></url>
+<url><loc>https://laresbernardo.github.io/lareshiny/index.html</loc></url>
+<url><loc>https://laresbernardo.github.io/lareshiny/reference/autoline_shiny.html</loc></url>
+<url><loc>https://laresbernardo.github.io/lareshiny/reference/custom_footer.html</loc></url>
+<url><loc>https://laresbernardo.github.io/lareshiny/reference/custom_header.html</loc></url>
+<url><loc>https://laresbernardo.github.io/lareshiny/reference/index.html</loc></url>
+<url><loc>https://laresbernardo.github.io/lareshiny/reference/js_op.html</loc></url>
+<url><loc>https://laresbernardo.github.io/lareshiny/reference/js_op_aux.html</loc></url>
+<url><loc>https://laresbernardo.github.io/lareshiny/reference/lareshiny.html</loc></url>
+<url><loc>https://laresbernardo.github.io/lareshiny/reference/model_exporter.html</loc></url>
+<url><loc>https://laresbernardo.github.io/lareshiny/reference/module_login.html</loc></url>
 </urlset>
+
