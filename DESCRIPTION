@@ -2,8 +2,8 @@ Package: lareshiny
 Type: Package
 Title: Lares 'shiny' Modules
 Version: 0.0.4.9001
-Authors@R: person("Bernardo", "Lares", , "lareshiny@bervos.org", c("cre","aut"))
-Maintainer: Bernardo Lares <lareshiny@bervos.org>
+Authors@R: person("Bernardo", "Lares", , "hello@bervos.org", c("cre","aut"))
+Maintainer: Bernardo Lares <hello@bervos.org>
 Description: Useful 'shiny' production-ready modules and helpers such as login window and visualization tools.
 License: AGPL-3
 Encoding: UTF-8
