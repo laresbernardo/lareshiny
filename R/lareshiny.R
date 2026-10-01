@@ -5,7 +5,7 @@
 #' @md
 #' @name lareshiny
 #' @docType package
-#' @author Bernardo Lares (hello@@bervos.org)
+#' @author Bernardo Lares (lareshiny@@bervos.org)
 #' @import dplyr
 #' @importFrom DT tableFooter tableHeader
 #' @import htmltools
